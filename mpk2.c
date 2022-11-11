@@ -5,8 +5,6 @@
 
 int main()
 {
-    //hi
-    //bye
     unsigned n1, m2, pom, kol, l;
 
     struct Poly lhs;            //первый множитель
