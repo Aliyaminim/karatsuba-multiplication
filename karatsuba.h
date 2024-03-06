@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 struct Poly {
     unsigned start;
@@ -10,6 +10,5 @@ struct Poly {
 void mult(struct Poly lhs, struct Poly rhs, struct Poly *p_res);
 
 void sum(struct Poly s1, struct Poly *res);
-
 
 void mpk(struct Poly lhs, struct Poly rhs, struct Poly *p_res);

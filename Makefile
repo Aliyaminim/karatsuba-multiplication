@@ -12,14 +12,17 @@ DOCKER_CONTAINER_ID := bd9ac9f387e8
 _build_dir:
 	@mkdir -p ${BUILD_DIR}
 
-program: _build_dir karatsuba.o mpk2.o
-	${CC} ${CCFLAGS} ${BUILD_DIR}/karatsuba.o ${BUILD_DIR}/mpk2.o -o ${BUILD_DIR}/program.elf
+program: _build_dir karatsuba.o tools.o main.o
+	${CC} ${CCFLAGS} ${BUILD_DIR}/karatsuba.o  ${BUILD_DIR}/tools.o ${BUILD_DIR}/main.o  -o ${BUILD_DIR}/program.elf
 
 karatsuba.o: karatsuba.c karatsuba.h
 	$(CC) $(CFLAGS) -c karatsuba.c -o ${BUILD_DIR}/karatsuba.o
 
-mpk2.o: mpk2.c karatsuba.h
-	$(CC) $(CFLAGS) -c mpk2.c -o ${BUILD_DIR}/mpk2.o
+tools.o: tools.c karatsuba.h
+	$(CC) $(CFLAGS) -c tools.c -o ${BUILD_DIR}/tools.o
+
+main.o: main.c karatsuba.h
+	$(CC) $(CFLAGS) -c main.c -o ${BUILD_DIR}/main.o
 
 build: program
 
