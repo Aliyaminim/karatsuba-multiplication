@@ -45,6 +45,7 @@ gdb: program
 valgrind: program
 	valgrind $(VALGRIND_FLAGS) ${BUILD_DIR}/$(BIN)
 
+#source /opt/sc-dt/env.sh before addressing this target
 build-docker:
 	make build CC=${SC_GCC_PATH}/bin/riscv64-unknown-linux-gnu-gcc QEMU_USER=${SC_QEMU_PATH}/qemu-riscv64
 
@@ -52,10 +53,6 @@ run-qemu-docker: build-docker
 	echo
 	echo "Running in QEMU from Docker..."
 	make run-qemu CC=${SC_GCC_PATH}/bin/riscv64-unknown-linux-gnu-gcc QEMU_USER=${SC_QEMU_PATH}/qemu-riscv64 CCFLAGS=-static
-
-docker:
-	@docker start $(CONTAINER)
-	@docker exec -it $(CONTAINER) bash
 
 clean:
 	rm -r ${BUILD_DIR}
