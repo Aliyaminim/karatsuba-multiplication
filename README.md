@@ -32,5 +32,14 @@ gdb ./build/program.elf < [file]
 ```bash
 valgrind VALGRIND_FLAGS+=[] ./build/program.elf < [file]
 ```
+## How to build application inside docker
+```bash
+source /opt/sc-dt/env.sh 
+make build-docker
+```
 
+Additionally, to run application on qemu inside docker:
+```bash
+make run-qemu-docker 
+```
 
