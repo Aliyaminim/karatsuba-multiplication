@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "karatsuba.h"
+#include "../include/karatsuba.h"
 
 void mult(struct Poly lhs, struct Poly rhs, struct Poly *p_res)
 {

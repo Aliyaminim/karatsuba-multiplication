@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "karatsuba.h"
+#include "../include/karatsuba.h"
 
 
 void print_result(struct Poly res) {
